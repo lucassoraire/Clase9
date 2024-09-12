@@ -8,16 +8,18 @@ public class VTV {
 	private String frenos;
 	private String motor;
 	private String suspension;
-	private String lista;
+	String lista;
 	
 	
 	
-	public VTV(String nombre,String auto,String modelo, String patente){
+	public VTV(String nombre,String auto,String modelo, String patente , String lista){
 	this.nombre=nombre;
 	this.auto=auto;
 	this.modelo=modelo;
 	this.patente=patente;
+	this.lista=lista;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -25,8 +27,8 @@ public class VTV {
 		while (nombre.isEmpty()) {
 			nombre=JOptionPane.showInputDialog(null,"Ingrese el nombre y apellido del titular del vehiculo:");
 		}
+		lista="Conclusiones de VTV: \n" + "Titular: " + nombre + "\n";
 		this.nombre=nombre;
-	
 	}
 	
 	
@@ -38,6 +40,7 @@ public class VTV {
 		while (auto.isEmpty()) {
 			auto=JOptionPane.showInputDialog("Ingrese la marca del vehiculo");
 		}
+		lista= lista + "Especificaciones del vehiculo: \n" + "Marca: " + auto + "\n";
 		this.auto=auto;
 	}
 	public String getModelo() {
@@ -48,6 +51,7 @@ public class VTV {
 		while (modelo.isEmpty()) {
 			modelo=JOptionPane.showInputDialog("Ingrese el modelo del vehiculo");
 		}
+		lista=lista + "Modelo: "+ modelo + "\n";
 		this.modelo=modelo;
 	}
 	
@@ -59,6 +63,7 @@ public class VTV {
 		while (patente.isEmpty()) {
 			patente=JOptionPane.showInputDialog("Ingrese la patente del vehiculo");
 		}
+		lista=lista + "Patente: " + patente + "\n"; 
 		this.patente=patente;
 	}
 	
@@ -72,6 +77,7 @@ public class VTV {
 		};
 		
 		motor=(String)JOptionPane.showInputDialog(null, "Del 1 al 10 en que estado esta el motor:", motor, 0, null, numero, numero[0]);
+		lista= lista + "Puntaje: \n" + "Motor: "+motor+"/10 \n";
 		this.motor=motor;
 	}
 	
@@ -85,6 +91,8 @@ public class VTV {
 		};
 		
 		frenos=(String)JOptionPane.showInputDialog(null, "Del 1 al 10 en que estado estan los frenos:", frenos, 0, null, numero, numero[0]);
+		lista= lista + "Frenos: "+frenos+"/10 \n";
+
 	this.frenos=frenos;	
 	}
 	
@@ -94,8 +102,11 @@ public class VTV {
 		};
 		
 		suspension=(String)JOptionPane.showInputDialog(null, "Del 1 al 10 en que estado esta la suspension:", suspension, 0, null, numero, numero[0]);
+		lista= lista + "Suspension: "+suspension+"/10 \n";
+
 	this.suspension=suspension;	
 	}
+	
 	
 	
 }

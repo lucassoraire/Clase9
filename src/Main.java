@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class main {
 
@@ -6,12 +7,17 @@ public class main {
 			// TODO Auto-generated method stub
 
 			
-		VTV nico= new VTV("","","","");	
+		VTV nico= new VTV("","","","","");	
 		
+		
+		nico.setNombre("");
+		nico.setAuto("");
+		nico.setModelo("");
+		nico.setPatente("");
 		nico.setMotor("");
-			
-			
-			
+		nico.setFrenos("");
+		nico.setSuspension("");
+	JOptionPane.showMessageDialog(null, nico.lista);
 			
 		}
 
